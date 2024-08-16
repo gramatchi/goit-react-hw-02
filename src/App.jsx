@@ -17,6 +17,8 @@ function App() {
     0
   );
 
+  const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
+
   const updateFeedback = (feedbackType) => {
     setFeedback((prev) => ({
       ...prev,
@@ -32,13 +34,21 @@ function App() {
     });
   };
 
- 
-
   return (
     <>
       <Description />
-      <Options options={feedback} handleClick={updateFeedback} totalFeedback={totalFeedback} resetFeedback={resetFeedback}/>
-      {totalFeedback ? <Feedback feedback={feedback} /> : <Notification />}
+      <Options
+        options={feedback}
+        handleClick={updateFeedback}
+        totalFeedback={totalFeedback}
+        resetFeedback={resetFeedback}
+        positiveFeedback={positiveFeedback}
+      />
+      {totalFeedback ? (
+        <Feedback feedback={feedback} positiveFeedback={positiveFeedback} />
+      ) : (
+        <Notification />
+      )}
     </>
   );
 }

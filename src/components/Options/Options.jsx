@@ -2,7 +2,7 @@ import s from "./Options.module.css";
 
 const Options = ({ options, handleClick, totalFeedback, resetFeedback }) => {
   return (
-    <>
+    <div>
       <ul className={s.list}>
         {Object.keys(options).map((item) => (
           <li key={item}>
@@ -10,8 +10,12 @@ const Options = ({ options, handleClick, totalFeedback, resetFeedback }) => {
           </li>
         ))}
       </ul>
-      {totalFeedback ? <button onClick={resetFeedback}>Reset</button> : null}
-    </>
+      {totalFeedback ? (
+        <>
+          <button onClick={resetFeedback}>Reset</button>
+        </>
+      ) : null}
+    </div>
   );
 };
 

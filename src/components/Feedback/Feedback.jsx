@@ -1,5 +1,6 @@
-const Feedback = ({feedback}) => {
+const Feedback = ({feedback, totalFeedback, positiveFeedback}) => {
   return (
+    <>
     <ul>
     {Object.entries(feedback).map(([key, value]) => (
       <li key={key}>
@@ -7,6 +8,11 @@ const Feedback = ({feedback}) => {
       </li>
     ))}
   </ul>
+  <div>
+            <p>Total: {totalFeedback}</p>
+            <p>Positive: {positiveFeedback}%</p>
+          </div>
+  </>
   )
 }
 
