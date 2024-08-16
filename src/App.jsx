@@ -24,10 +24,20 @@ function App() {
     }));
   };
 
+  const resetFeedback = () => {
+    setFeedback({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
+  };
+
+ 
+
   return (
     <>
       <Description />
-      <Options options={feedback} handleClick={updateFeedback} />
+      <Options options={feedback} handleClick={updateFeedback} totalFeedback={totalFeedback} resetFeedback={resetFeedback}/>
       {totalFeedback ? <Feedback feedback={feedback} /> : <Notification />}
     </>
   );
