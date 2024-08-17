@@ -31,9 +31,7 @@ function App() {
   };
 
   const resetFeedback = () => {
-    const initialFeedback = { good: 0, neutral: 0, bad: 0 };
-    setFeedback(initialFeedback);
-    localStorage.setItem("feedback", JSON.stringify(initialFeedback));
+    setFeedback({ good: 0, neutral: 0, bad: 0 });
   };
 
   return (
