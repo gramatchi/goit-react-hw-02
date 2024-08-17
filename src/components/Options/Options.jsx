@@ -9,11 +9,7 @@ const Options = ({ options, handleClick, totalFeedback, resetFeedback }) => {
             <button onClick={() => handleClick(item)}>{item}</button>
           </li>
         ))}
-        {totalFeedback ? (
-          <li>
-            <button onClick={resetFeedback}>Reset</button>
-          </li>
-        ) : null}
+        {totalFeedback ? <button onClick={resetFeedback}>Reset</button> : null}
       </ul>
     </div>
   );
