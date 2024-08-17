@@ -1,6 +1,8 @@
+import s from "./Feedback.module.css";
+
 const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => {
   return (
-    <>
+    <div className={s.container}>
       <ul>
         {Object.entries(feedback).map(([key, value]) => (
           <li key={key}>
@@ -12,7 +14,7 @@ const Feedback = ({ feedback, totalFeedback, positiveFeedback }) => {
         <p>Total: {totalFeedback}</p>
         <p>Positive: {positiveFeedback}%</p>
       </div>
-    </>
+    </div>
   );
 };
 
